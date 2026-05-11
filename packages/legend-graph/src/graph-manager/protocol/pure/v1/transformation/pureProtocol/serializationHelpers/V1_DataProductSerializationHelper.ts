@@ -573,7 +573,7 @@ export const V1_dataProductModelSchema = (
     taggedValues: customListWithSchema(V1_taggedValueModelSchema, {
       INTERNAL__forceReturnEmptyInTest: true,
     }),
-    testSuites: customList(
+    testSuites: optionalCustomList(
       (value: V1_DataProductTestSuite) =>
         serialize(V1_dataProductTestSuiteModelSchema(plugins), value),
       (value) =>
